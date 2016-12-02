@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:paddingBottom="16dp">
+
+    <HorizontalScrollView
+        android:id="@+id/test_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/test_input"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/three"
+                android:text="3."
+                android:textColor="@color/colorPrimaryLight"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="60sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/n1"
+                android:text="1"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+
+            <Button
+                android:id="@+id/n2"
+                android:text="2"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+
+            <Button
+                android:id="@+id/n3"
+                android:text="3"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/n4"
+                android:text="4"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+
+            <Button
+                android:id="@+id/n5"
+                android:text="5"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+
+            <Button
+                android:id="@+id/n6"
+                android:text="6"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/n7"
+                android:text="7"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+
+            <Button
+                android:id="@+id/n8"
+                android:text="8"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+
+            <Button
+                android:id="@+id/n9"
+                android:text="9"
+                style="@style/NumButton"
+                android:layout_width="@dimen/num_button_width"
+                android:layout_height="@dimen/num_button_height"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/n0"
+            android:text="0"
+            style="@style/NumButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/num_button_height"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:text="55 digits"
+        android:gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/test_scroll"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/test_counter"
+        android:layout_margin="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"/>
+
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_refresh_white_48dp"
+        android:layout_below="@+id/test_scroll"
+        android:layout_alignParentStart="true"
+        android:id="@+id/test_reset"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:tint="@color/colorPrimaryLight"
+        android:layout_margin="8dp"/>
+
+    <include layout="@layout/layout_title"
+        android:id="@+id/title"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <include layout="@layout/layout_title"/>
+
+    <Button
+        android:id="@+id/home_test"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="Test"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/home_memorize"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="Memorize"
+        android:layout_below="@+id/home_test"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/home_settings"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:text="Settings"
+        android:layout_below="@+id/home_memorize"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
