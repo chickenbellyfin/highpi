@@ -86,7 +86,6 @@ public class TestActivity extends Activity {
             R.id.n4, R.id.n5, R.id.n6,
             R.id.n7, R.id.n8, R.id.n9 })
     public void onDigitClicked(View v){
-
         String d = v.getTag().toString();
 
         if(!d.equals(Digits.at(digitIndex))){
@@ -143,6 +142,4 @@ public class TestActivity extends Activity {
         scroll.post(scrollMax);
         return view;
     }
-
-
 }

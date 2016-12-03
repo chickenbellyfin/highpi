@@ -10,7 +10,6 @@ import butterknife.ButterKnife;
 
 public class MemorizeActivity extends Activity {
 
-
     @BindView(R.id.digits) TextView digits;
 
     @Override
@@ -19,6 +18,5 @@ public class MemorizeActivity extends Activity {
         setContentView(R.layout.activity_memorize);
         ButterKnife.bind(this);
         digits.setText(Digits.spaced(5));
-
     }
 }

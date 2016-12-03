@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,7 +15,6 @@ public class MainActivity extends Activity {
 
     @BindView(R.id.home_test) Button testButton;
     @BindView(R.id.home_memorize) Button memorizeButton;
-
     @BindView(R.id.score) TextView score;
 
     @Override

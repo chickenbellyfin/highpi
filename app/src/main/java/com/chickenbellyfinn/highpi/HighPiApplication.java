@@ -4,10 +4,6 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-/**
- * Created by akshay on 12/2/16.
- */
-
 public class HighPiApplication extends Application {
 
     private static final String PREF_SCORE = "score";
@@ -31,5 +27,4 @@ public class HighPiApplication extends Application {
         super.onCreate();
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
     }
-
 }
