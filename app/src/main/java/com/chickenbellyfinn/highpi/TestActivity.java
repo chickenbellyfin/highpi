@@ -1,9 +1,11 @@
 package com.chickenbellyfinn.highpi;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Vibrator;
-import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,22 +15,11 @@ import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.bluelinelabs.conductor.Controller;
-
-import org.w3c.dom.Text;
-
-import java.util.HashMap;
-import java.util.Stack;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by akshay on 12/2/16.
- */
-
-public class TestController extends Controller {
+public class TestActivity extends Activity {
 
     private final static long VIBRATE = 40;
 
@@ -56,7 +47,6 @@ public class TestController extends Controller {
         }
     };
 
-    private HashMap<Button, String> buttonDigits;
     private Vibrator vibrator;
     private LayoutInflater inflater;
 
@@ -68,15 +58,14 @@ public class TestController extends Controller {
 
     private boolean errorFlag = false;
 
-    @NonNull
     @Override
-    protected View onCreateView(@NonNull LayoutInflater inflater, @NonNull ViewGroup container) {
-        View view = inflater.inflate(R.layout.controller_test, container);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_test);
+        ButterKnife.bind(this);
 
-        vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
-        this.inflater = LayoutInflater.from(getActivity());
-
-        ButterKnife.bind(this, view);
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        this.inflater = LayoutInflater.from(this);
 
         n0.setTag("0");
         n1.setTag("1");
@@ -90,8 +79,6 @@ public class TestController extends Controller {
         n9.setTag("9");
 
         reset();
-
-        return view;
     }
 
     @OnClick({ R.id.n0,
@@ -99,6 +86,7 @@ public class TestController extends Controller {
             R.id.n4, R.id.n5, R.id.n6,
             R.id.n7, R.id.n8, R.id.n9 })
     public void onDigitClicked(View v){
+
         String d = v.getTag().toString();
 
         if(!d.equals(Digits.at(digitIndex))){
@@ -109,6 +97,7 @@ public class TestController extends Controller {
 
         if(!errorFlag){
             streak++;
+            HighPiApplication.submitScore(streak);
         }
         digitIndex++;
 
@@ -121,9 +110,9 @@ public class TestController extends Controller {
 
         vibrator.vibrate(VIBRATE);
     }
-
     @OnClick(R.id.test_reset)
     public void onResetClick(){
+        vibrator.vibrate(VIBRATE);
         reset();
     }
 
@@ -140,8 +129,6 @@ public class TestController extends Controller {
 
         scroll.post(scrollMax);
 
-        vibrator.vibrate(VIBRATE);
-
         updateCounter();
     }
 
@@ -156,5 +143,6 @@ public class TestController extends Controller {
         scroll.post(scrollMax);
         return view;
     }
+
 
 }
